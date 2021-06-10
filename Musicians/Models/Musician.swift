@@ -8,7 +8,8 @@
 import Foundation
 
 struct Musician {
-    var name: String?
-    var instrument: String?
+    var name: String
+    var instrument: String
     var level: Int
+    var isAvailable: Bool
 }

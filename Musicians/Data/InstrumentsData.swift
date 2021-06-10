@@ -65,5 +65,7 @@ var instruments = [
     "french horn",
     "tuba",
     "guitar",
-    "piano"
+    "piano",
+    "voice",
+    "organ"
 ]

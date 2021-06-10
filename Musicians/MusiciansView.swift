@@ -7,16 +7,17 @@
 
 import SwiftUI
 
+
+
 struct MusicianCell: View {
     var musician: Musician
     var body: some View {
         NavigationLink(
             destination: MusicianDetailView(musician: musician)) {
-                Text(musician.name!)
-                Spacer()
-                Text(musician.instrument!)
-                    .foregroundColor(.gray)
-            }
+            Text(musician.name).frame(width: 150, alignment: .leading)
+            Text(musician.instrument)
+                .foregroundColor(.gray)
+        }
         
     }
 }
@@ -28,15 +29,20 @@ struct MusiciansView: View {
                 List(0..<musicians.count, rowContent: { index in
                     MusicianCell(musician: musicians[index])
                 })
+                if newMusicians.count > 0 {
+                    List(0..<newMusicians.count, rowContent: { index in
+                        MusicianCell(musician: newMusicians[index])
+                    })
+                }
             }.navigationTitle("Musicians")
             .toolbar {
-                NavigationLink(destination: AddMusicianView()){
-                    Button("Add Musician") {
-                        
-                    }
-                    
+                NavigationLink(destination: AddMusicianView(newMusician: Musician(name: "", instrument: "", level: 1, isAvailable: true))){
+                    Button(action: {}, label: {
+                        Text("Add Musician")
+                    })
                 }
             }
+        
         }
     }
     
@@ -52,28 +58,54 @@ struct MusicianDetailView: View {
     var musician: Musician
     var body: some View {
         VStack {
-            Text("Name: \(musician.name!)")
-            Image(musician.instrument!)
+            Text("Name: \(musician.name)")
+            Image(musician.instrument)
                 .resizable()
                 .scaledToFit()
-            Text("Instrument: \(musician.instrument!)")
+            Text("Instrument: \(musician.instrument)")
+            if musician.isAvailable {
+                Text("Status: available for work").padding(.top, 20)
+            } else {
+                Text("Status: unavailable for work").padding(.top, 20)
+            }
         }.navigationTitle("Musician Profile")
     }
 }
 
 struct AddMusicianView: View {
-    @State private var fullName: String = ""
-    @State private var previewIndex = 0
+    @State var newMusician: Musician
     
     var body: some View {
         Form {
-            TextField("Full Name", text: $fullName)
-                .autocapitalization(.words)
-            Picker(selection: $previewIndex, label: Text("Instrument")) {
-                    ForEach(0 ..< instruments.count) {
-                        Text(instruments[$0])
+            Section(header: Text("Full Name")) {
+                TextField("Full Name", text: $newMusician.name)
+                    .autocapitalization(.words)
+            }
+            Section(header: Text("Details")) {
+                Picker(selection: $newMusician.instrument, label: Text("Instrument")) {
+                    ForEach(0 ..< instruments.count) { index in
+                        Text(instruments[index])
                     }
                 }
-        }
+                Toggle("Available?", isOn: $newMusician.isAvailable)
+            }
+            
+            Section {
+                Button(action: {newMusicians.append(newMusician)}, label: {
+                    VStack {
+                        Image(systemName: "pianokeys")
+                        Text("Add Musician")
+                    }.frame(
+                        minWidth: 0,
+                        maxWidth: .infinity,
+                        minHeight: 0,
+                        maxHeight: .infinity,
+                        alignment: .center
+                    )
+                    
+                })
+            }
+        }.navigationTitle("Add Musician")
     }
+    
 }
