@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		861DD76326726A2E0052D165 /* MusiciansViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DD76226726A2E0052D165 /* MusiciansViewModel.swift */; };
 		8645F9072670AEBF0072844E /* MusiciansApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8645F9062670AEBF0072844E /* MusiciansApp.swift */; };
 		8645F9092670AEBF0072844E /* MusiciansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8645F9082670AEBF0072844E /* MusiciansView.swift */; };
 		8645F90B2670AEC10072844E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8645F90A2670AEC10072844E /* Assets.xcassets */; };
 		8645F90E2670AEC10072844E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8645F90D2670AEC10072844E /* Preview Assets.xcassets */; };
 		8645F9182670B1180072844E /* InstrumentsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8645F9162670B1180072844E /* InstrumentsData.swift */; };
 		8645F9192670B1180072844E /* MusiciansData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8645F9172670B1180072844E /* MusiciansData.swift */; };
-		8645F91C2670B1200072844E /* Musician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8645F91B2670B1200072844E /* Musician.swift */; };
+		8645F91C2670B1200072844E /* MusicianApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8645F91B2670B1200072844E /* MusicianApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		861DD76226726A2E0052D165 /* MusiciansViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiciansViewModel.swift; sourceTree = "<group>"; };
 		8645F9032670AEBF0072844E /* Musicians.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicians.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8645F9062670AEBF0072844E /* MusiciansApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiciansApp.swift; sourceTree = "<group>"; };
 		8645F9082670AEBF0072844E /* MusiciansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiciansView.swift; sourceTree = "<group>"; };
@@ -25,7 +27,7 @@
 		8645F90F2670AEC10072844E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8645F9162670B1180072844E /* InstrumentsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentsData.swift; sourceTree = "<group>"; };
 		8645F9172670B1180072844E /* MusiciansData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusiciansData.swift; sourceTree = "<group>"; };
-		8645F91B2670B1200072844E /* Musician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Musician.swift; sourceTree = "<group>"; };
+		8645F91B2670B1200072844E /* MusicianApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicianApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				8645F90A2670AEC10072844E /* Assets.xcassets */,
 				8645F90F2670AEC10072844E /* Info.plist */,
 				8645F90C2670AEC10072844E /* Preview Content */,
+				861DD76226726A2E0052D165 /* MusiciansViewModel.swift */,
 			);
 			path = Musicians;
 			sourceTree = "<group>";
@@ -89,7 +92,7 @@
 		8645F91A2670B1200072844E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8645F91B2670B1200072844E /* Musician.swift */,
+				8645F91B2670B1200072844E /* MusicianApp.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,9 +168,10 @@
 			files = (
 				8645F9192670B1180072844E /* MusiciansData.swift in Sources */,
 				8645F9092670AEBF0072844E /* MusiciansView.swift in Sources */,
-				8645F91C2670B1200072844E /* Musician.swift in Sources */,
+				8645F91C2670B1200072844E /* MusicianApp.swift in Sources */,
 				8645F9072670AEBF0072844E /* MusiciansApp.swift in Sources */,
 				8645F9182670B1180072844E /* InstrumentsData.swift in Sources */,
+				861DD76326726A2E0052D165 /* MusiciansViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

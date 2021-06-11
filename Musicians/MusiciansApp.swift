@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct MusiciansApp: App {
+    let viewModel = MusicianAppViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            MusiciansView()
+            MusiciansView(viewModel: viewModel)
         }
     }
 }

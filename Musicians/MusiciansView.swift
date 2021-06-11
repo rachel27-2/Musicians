@@ -10,12 +10,12 @@ import SwiftUI
 
 
 struct MusicianCell: View {
-    var musician: Musician
+    var viewModel: MusicianAppViewModel
     var body: some View {
         NavigationLink(
-            destination: MusicianDetailView(musician: musician)) {
-            Text(musician.name).frame(width: 150, alignment: .leading)
-            Text(musician.instrument)
+            destination: MusicianDetailView(viewModel: viewModel)) {
+            Text(verbatim: viewModel.musician.name).frame(width: 150, alignment: .leading)
+            Text(verbatim: viewModel.musician.instrument)
                 .foregroundColor(.gray)
         }
         
@@ -23,20 +23,18 @@ struct MusicianCell: View {
 }
 
 struct MusiciansView: View {
+    var viewModel: MusicianAppViewModel
+    
     var body: some View {
         return NavigationView{
             VStack {
-                List(0..<musicians.count, rowContent: { index in
-                    MusicianCell(musician: musicians[index])
+                List(0..<MusicianAppViewModel.musicians.count, rowContent: { index in
+                    MusicianCell(viewModel: viewModel)
                 })
-                if newMusicians.count > 0 {
-                    List(0..<newMusicians.count, rowContent: { index in
-                        MusicianCell(musician: newMusicians[index])
-                    })
-                }
+                
             }.navigationTitle("Musicians")
             .toolbar {
-                NavigationLink(destination: AddMusicianView(newMusician: Musician(name: "", instrument: "", level: 1, isAvailable: true))){
+                NavigationLink(destination: MusiciansView(viewModel: viewModel)){
                     Button(action: {}, label: {
                         Text("Add Musician")
                     })
@@ -49,21 +47,24 @@ struct MusiciansView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        MusiciansView()
+        let viewModel = MusicianAppViewModel()
+        
+        MusiciansView(viewModel: viewModel)
     }
 }
 
 struct MusicianDetailView: View {
-    var musician: Musician
+    var viewModel: MusicianAppViewModel
     var body: some View {
         VStack {
-            Text("Name: \(musician.name)")
-            Image(musician.instrument)
+            Text("Name: \(viewModel.musician.name)")
+            Image(viewModel.musician.instrument)
                 .resizable()
                 .scaledToFit()
-            Text("Instrument: \(musician.instrument)")
-            if musician.isAvailable {
+            Text("Instrument: \(viewModel.musician.instrument)")
+            if viewModel.musician.isAvailable {
                 Text("Status: available for work").padding(.top, 20)
             } else {
                 Text("Status: unavailable for work").padding(.top, 20)
@@ -72,40 +73,67 @@ struct MusicianDetailView: View {
     }
 }
 
-struct AddMusicianView: View {
-    @State var newMusician: Musician
-    
-    var body: some View {
-        Form {
-            Section(header: Text("Full Name")) {
-                TextField("Full Name", text: $newMusician.name)
-                    .autocapitalization(.words)
-            }
-            Section(header: Text("Details")) {
-                Picker(selection: $newMusician.instrument, label: Text("Instrument")) {
-                    ForEach(0 ..< instruments.count) { index in
-                        Text(instruments[index])
-                    }
-                }
-                Toggle("Available?", isOn: $newMusician.isAvailable)
-            }
-            
-            Section {
-                Button(action: {newMusicians.append(newMusician)}, label: {
-                    VStack {
-                        Image(systemName: "pianokeys")
-                        Text("Add Musician")
-                    }.frame(
-                        minWidth: 0,
-                        maxWidth: .infinity,
-                        minHeight: 0,
-                        maxHeight: .infinity,
-                        alignment: .center
-                    )
-                    
-                })
-            }
-        }.navigationTitle("Add Musician")
-    }
-    
+//struct AddMusicianView: View {
+//    @State var newMusician = Musician(name: "", instrument: "violin", level: 1, isAvailable: true)
+//    @Binding var newMusicians: [Musician]
+//
+//    var body: some View {
+//        Form {
+//            Section(header: Text("Full Name")) {
+//                TextField("Full Name", text: $newMusician.name)
+//                    .autocapitalization(.words)
+//            }
+//            Section(header: Text("Details")) {
+//                Picker("Instrument", selection: $newMusician.instrument, content: {
+//                    ForEach(Instrument.allCases) { instrument in
+//                            Text(instrument.rawValue.capitalized)
+//                    }
+//                })
+//                Toggle("Available?", isOn: $newMusician.isAvailable)
+//            }
+//
+//            Section {
+//                Button(action: {
+//                    print(newMusician)
+//                    newMusicians.append(newMusician)
+//                    print(newMusicians)
+//                }, label: {
+//                    VStack {
+//                        Image(systemName: "pianokeys")
+//                        Text("Add Musician")
+//                    }.frame(
+//                        minWidth: 0,
+//                        maxWidth: .infinity,
+//                        minHeight: 0,
+//                        maxHeight: .infinity,
+//                        alignment: .center
+//                    )
+//
+//                })
+//            }
+//        }.navigationTitle("Add Musician")
+//    }
+//
+//}
+
+
+enum Instrument: String, CaseIterable, Identifiable {
+    case violin
+    case viola
+    case cello
+    case bass
+    case oboe
+    case bassoon
+    case flute
+    case clarinet
+    case frenchhorn
+    case trumpet
+    case trombone
+    case tuba
+    case guitar
+    case voice
+    case organ
+    case piano
+
+    var id: String { self.rawValue }
 }
