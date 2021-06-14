@@ -10,6 +10,8 @@
 		861DD76326726A2E0052D165 /* MusiciansViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DD76226726A2E0052D165 /* MusiciansViewModel.swift */; };
 		861DD765267751E90052D165 /* MusicianDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DD764267751E90052D165 /* MusicianDetailView.swift */; };
 		861DD767267761C30052D165 /* AddMusiciansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DD766267761C30052D165 /* AddMusiciansView.swift */; };
+		861DD769267783750052D165 /* BookMusicianFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DD768267783750052D165 /* BookMusicianFormView.swift */; };
+		861DD76B2677891A0052D165 /* UpdateAvailabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861DD76A2677891A0052D165 /* UpdateAvailabilityView.swift */; };
 		8645F9072670AEBF0072844E /* MusiciansApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8645F9062670AEBF0072844E /* MusiciansApp.swift */; };
 		8645F9092670AEBF0072844E /* MusiciansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8645F9082670AEBF0072844E /* MusiciansView.swift */; };
 		8645F90B2670AEC10072844E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8645F90A2670AEC10072844E /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 		861DD76226726A2E0052D165 /* MusiciansViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiciansViewModel.swift; sourceTree = "<group>"; };
 		861DD764267751E90052D165 /* MusicianDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicianDetailView.swift; sourceTree = "<group>"; };
 		861DD766267761C30052D165 /* AddMusiciansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMusiciansView.swift; sourceTree = "<group>"; };
+		861DD768267783750052D165 /* BookMusicianFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMusicianFormView.swift; sourceTree = "<group>"; };
+		861DD76A2677891A0052D165 /* UpdateAvailabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAvailabilityView.swift; sourceTree = "<group>"; };
 		8645F9032670AEBF0072844E /* Musicians.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicians.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8645F9062670AEBF0072844E /* MusiciansApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiciansApp.swift; sourceTree = "<group>"; };
 		8645F9082670AEBF0072844E /* MusiciansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusiciansView.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 				861DD76226726A2E0052D165 /* MusiciansViewModel.swift */,
 				861DD764267751E90052D165 /* MusicianDetailView.swift */,
 				861DD766267761C30052D165 /* AddMusiciansView.swift */,
+				861DD768267783750052D165 /* BookMusicianFormView.swift */,
+				861DD76A2677891A0052D165 /* UpdateAvailabilityView.swift */,
 			);
 			path = Musicians;
 			sourceTree = "<group>";
@@ -174,9 +180,11 @@
 			files = (
 				8645F9192670B1180072844E /* MusiciansData.swift in Sources */,
 				861DD767267761C30052D165 /* AddMusiciansView.swift in Sources */,
+				861DD76B2677891A0052D165 /* UpdateAvailabilityView.swift in Sources */,
 				8645F9092670AEBF0072844E /* MusiciansView.swift in Sources */,
 				8645F91C2670B1200072844E /* MusicianApp.swift in Sources */,
 				8645F9072670AEBF0072844E /* MusiciansApp.swift in Sources */,
+				861DD769267783750052D165 /* BookMusicianFormView.swift in Sources */,
 				861DD765267751E90052D165 /* MusicianDetailView.swift in Sources */,
 				8645F9182670B1180072844E /* InstrumentsData.swift in Sources */,
 				861DD76326726A2E0052D165 /* MusiciansViewModel.swift in Sources */,
