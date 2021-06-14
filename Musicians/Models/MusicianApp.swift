@@ -9,7 +9,7 @@ import Foundation
 
 struct MusicianApp {
     
-    struct Musician {
+    struct Musician: Hashable {
         var name: String
         var instrument: String
         var level: Int

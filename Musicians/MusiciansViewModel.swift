@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-class MusicianAppViewModel {
+class MusicianAppViewModel: ObservableObject {
     
     private(set) var model: MusicianApp = MusicianApp()
     
-    private(set) var musician: MusicianApp.Musician = musicians[0]
-    
-    static var musicians =  [
+    @Published var musicians =  [
         MusicianApp.Musician(name: "Rachel Kendal", instrument: "trombone", level: 1, isAvailable: true),
         MusicianApp.Musician(name: "Declan Hickey", instrument: "clarinet", level: 1, isAvailable: true),
         MusicianApp.Musician(name: "Callum Sullivan", instrument: "french horn", level: 1, isAvailable: true),
@@ -32,5 +30,9 @@ class MusicianAppViewModel {
         MusicianApp.Musician(name: "Jack Stebbing", instrument: "bassoon", level: 1, isAvailable: false),
         MusicianApp.Musician(name: "Tom Moy", instrument: "voice", level: 1, isAvailable: true)
     ]
+    
+    func add(musician: MusicianApp.Musician) {
+        musicians.append(musician)
+    }
     
 }

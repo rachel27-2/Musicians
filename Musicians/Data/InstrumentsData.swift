@@ -69,3 +69,24 @@ var instruments = [
     "voice",
     "organ"
 ]
+
+enum Instrument: String, CaseIterable, Identifiable {
+    case violin
+    case viola
+    case cello
+    case bass
+    case oboe
+    case bassoon
+    case flute
+    case clarinet
+    case frenchhorn
+    case trumpet
+    case trombone
+    case tuba
+    case guitar
+    case voice
+    case organ
+    case piano
+
+    var id: String { self.rawValue }
+}
