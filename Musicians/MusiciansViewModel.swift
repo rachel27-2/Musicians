@@ -1,46 +1,17 @@
 //
-//  MusiciansData.swift
-//  MusiciansInfo
+//  MusiciansViewModel.swift
+//  Musicians
 //
-//  Created by Rachel Kendal on 07/06/2021.
+//  Created by Rachel Kendal on 10/06/2021.
 //
 
-import UIKit
+import SwiftUI
 
-//class MusiciansData: NSObject {
-//    // MARK: - Properties
-//    var musicians: [Musician]
-//
-//    static func generateMusiciansData() -> [Musician] {
-//        return [
-//            Musician(name: "Rachel Kendal", instrument: "guitar", level: 4),
-//            Musician(name: "Declan Hickey", instrument: "clarinet", level: 3),
-//            Musician(name: "Callum Sullivan", instrument: "french horn", level: 5)
-//        ]
-//    }
-//
-//    // MARK: - Initialisers
-//    override init() {
-//        musicians = MusiciansData.generateMusiciansData()
-//    }
-//
-//    // MARK: - Methods
-//    func numberOfMusicians() -> Int {
-//        musicians.count
-//    }
-//
-//    func append(musician: Musician, to tableView: UITableView) {
-//        musicians.append(musician)
-//        tableView.insertRows(at: [IndexPath(row: musicians.count-1, section: 0)], with: .automatic)
-//    }
-//
-//    func musician(at indexPath: IndexPath) -> Musician {
-//        musicians[indexPath.row]
-//    }
-//}
-
-var musiciansDummyData: [MusicianApp.Musician] =
-    [
+class MusicianAppViewModel: ObservableObject {
+    
+    private(set) var model: MusicianApp = MusicianApp()
+    
+    @Published var musicians =  [
         MusicianApp.Musician(name: "Rachel Kendal", instrument: "trombone", level: 1, isAvailable: true),
         MusicianApp.Musician(name: "Declan Hickey", instrument: "clarinet", level: 1, isAvailable: true),
         MusicianApp.Musician(name: "Callum Sullivan", instrument: "french horn", level: 1, isAvailable: true),
@@ -60,8 +31,8 @@ var musiciansDummyData: [MusicianApp.Musician] =
         MusicianApp.Musician(name: "Tom Moy", instrument: "voice", level: 1, isAvailable: true)
     ]
     
-//    func addMusician(musician: Musician) {
-//        musicians.append(musician)
-//    }
-
-var newMusicians: [MusicianApp.Musician] = []
+    func add(musician: MusicianApp.Musician) {
+        musicians.append(musician)
+    }
+    
+}
