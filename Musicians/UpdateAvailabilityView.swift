@@ -12,10 +12,11 @@ struct UpdateAvailabilityView: View {
     
     var body: some View {
         Form {
+            
             Toggle("Available for work?", isOn: $musician.isAvailable)
-            Button(action: { print(musician) }, label: {
-                Text("Submit")
-            })
+            
+            NavigationLink("Submit", destination: MusicianDetailView(musician: musician))
+            
         }
     }
 }
