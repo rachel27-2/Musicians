@@ -9,14 +9,15 @@ import SwiftUI
 
 struct UpdateAvailabilityView: View {
     @State var musician: MusicianApp.Musician
+    @EnvironmentObject var available: Available
     
     var body: some View {
         Form {
-            
             Toggle("Available for work?", isOn: $musician.isAvailable)
             
-            NavigationLink("Submit", destination: MusicianDetailView(musician: musician))
-            
+            Button(action: {available.status = musician.isAvailable}, label: {
+                Text("Submit")
+            })
         }
     }
 }

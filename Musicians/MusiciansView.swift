@@ -24,6 +24,7 @@ struct MusicianCell: View {
 }
 
 struct MusiciansView: View {
+    @EnvironmentObject var available: Available
     @ObservedObject var viewModel: MusicianAppViewModel
     
     var body: some View {

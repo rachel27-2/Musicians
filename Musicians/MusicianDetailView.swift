@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MusicianDetailView: View {
     var musician: MusicianApp.Musician
+    @EnvironmentObject var available: Available
+    
     var body: some View {
       
             VStack {
@@ -18,7 +20,7 @@ struct MusicianDetailView: View {
                     .resizable()
                     .scaledToFit()
                 Text("Instrument: \(musician.instrument)")
-                if musician.isAvailable {
+                if available.status {
                     VStack {
                         Text("Status: available for work").padding(.top, 20)
                         
